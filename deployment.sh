@@ -1,7 +1,6 @@
 
 #!/bin/bash
 DEPLOYMENT_BUCKET="upb-camila"
-STACK_NAME="upb-stack-3"
 
 while getopts ":bdp" OPTION; do
     case $OPTION in
@@ -35,6 +34,6 @@ fi
 
 if [[ $DEPLOY == 1 ]]
 then
-    aws cloudformation deploy --template-file packaged-template.json --stack-name upb-stack1 --capabilities CAPABILITY_NAMED_IAM
+    aws cloudformation deploy --template-file packaged-template.json --stack-name upb-stack-pipeline --capabilities CAPABILITY_NAMED_IAM
 fi
 
